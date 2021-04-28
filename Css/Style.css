@@ -1,0 +1,267 @@
+html {
+background: linear-gradient(to top, #A64B00 , #FFBF40);
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+}
+
+header {
+position: relative;
+ margin-left: 0px;
+ display: block; /* Для старых браузеров */
+ height: 80px; /* Высота шапки */
+ width: auto;
+ background-color: black;
+ color:white;
+ font-size: 3em;
+ vertical-align: middle;
+  font-family: 'Arial Black', sans-serif;
+  border-bottom: 2px solid white;
+}
+
+footer {
+position: relative;
+ margin-left: 0px;
+ margin-bottom:0px;
+ margin-top:50px;
+ display: block; /* Для старых браузеров */
+ height: 80px; /* Высота шапки */
+ width: auto;
+ background-color: black;
+ color:white;
+ font-size: 3em;
+ vertical-align: middle;
+  font-family: 'Arial Black', sans-serif;
+  border-top: 2px solid white;
+}
+
+
+body{
+  margin:0px;
+}
+
+.menu-2 {
+     margin-top:0px;
+     height: auto;
+     list-style-type: none;
+     background-color:rgba(0,0,0,0.8);
+     text-align: center;
+     }
+  .menu-2 li {
+     margin: 16px 20px 16px 0;
+     padding: 4px 28px 8px;
+     background-color:rgba(0,0,0,0.8);
+     border: 2px solid #FF7F00;
+     border-radius: 1px 10px;
+     display: inline-block;
+     transition: all 0.7s ease 0s;
+     }
+  .menu-2 a {
+    color: white;
+    text-decoration: none;
+    }
+  .menu-2 li:hover {
+    background-color:rgba(0,0,0,0.8);
+    border-radius: 10px 1px;
+    border-color: white;
+    }
+  .menu-2 li:hover a {
+    color: white;
+    }
+
+#obj1 {
+       width:70%;
+       height:80%;
+       border:3px solid crimson;
+       background-color:rgba(0,0,0,0.8);
+       margin:0 auto;
+       overflow: auto;
+      }
+
+  #Logo{
+    margin-left:center;
+  	font-family: "MB-Real_Grinder", Georgia, Serif;   
+        color:white;
+        font-size:10px;
+        text-shadow:crimson 0px 0px 20px;        
+  }
+ 
+#wg{
+  margin-top: 20px;
+  width:40px;
+  height:40px;
+}
+
+#wg1{
+  position: absolute;
+  right: 30px;
+  top:0px; 
+}
+
+.clock {
+  position: absolute;
+  top: -2px;
+  left:-15px;
+  font-size: 25px;
+  font-family: 'Arial Black', sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+.clock ul li {
+  display: inline;
+}
+.clock ul li#separator {
+  -moz-animation: myfade 2s ease infinite;
+  -webkit-animation: myfade 2s ease infinite;
+}
+
+#cont{
+  position: relative;
+  margin: 5%;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  width: 90%;
+  height: 350px;
+  border:1px solid black;
+  background-color:rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px 4px;
+  border-radius: 30px 1px;
+
+}
+
+#cont1{
+  position: relative;
+  margin: 5%;
+  margin-top: 50px;
+  width: 90%;
+  height: auto; 
+  border:1px solid black;
+  background-color:rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px 4px;
+  border-radius: 30px 1px;
+  padding-bottom: 35px ;
+}
+
+#photo_R{
+  display: inline-block;
+  float: left;
+  margin:25px;
+  margin-right: 0px;
+  width:300px;
+  height:300px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 3px;
+}
+
+#photo_L{
+  display:block;
+  float: left;
+  margin:25px;
+  width:300px;
+  height:300px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 3px;
+}
+
+#text {
+        display:block;
+        left: -100px;
+        margin-top:15px;
+        color:white;
+        font-size:20px;
+        text-shadow:black 0px 0px 10px;
+      }
+#text1 {
+
+        color:white;
+        text-shadow:black 0px 0px 10px;
+      }
+
+#audio {
+  position: absolute;
+  display: block;
+  float: center;
+  margin-top:110px;
+  margin-left:350px;
+}
+
+a {
+  color: black;
+}
+  
+#p {
+    margin:20px;
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:35px;
+    color:white;
+    font-family: "Segoe UI Black", Georgia, Serif;
+    text-shadow:black 0px 0px 20px;
+}
+
+#name {
+position: relative;
+padding: 5px;
+ margin-left: 350px;
+ margin-right: 23px;
+ margin-top: 23px;
+ display: block; /* Для старых браузеров */
+ height: 20px; /* Высота шапки */
+ width: auto;
+ background-color:rgba(0,0,0,0.3);
+ border:1px solid black;
+ box-shadow: 0 0 5px 2px black;
+ color:white;
+ font-size: 1em;
+ font-family: 'Arial Black', sans-serif;
+ text-align: center;
+}
+
+#mn_name {
+position: relative;
+padding: 5px;
+ margin-left: 23px;
+ margin-right: 23px;
+ margin-top: 23px;
+ display: block; /* Для старых браузеров */
+ height: 20px; /* Высота шапки */
+ width: auto;
+ background-color:rgba(0,0,0,0.3);
+ border:1px solid black;
+ box-shadow: 0 0 5px 2px black;
+ color:white;
+ font-size: 1em;
+  font-family: 'Arial Black', sans-serif;
+  text-align: center;
+}
+
+#test{
+  background-color: black;
+  color: white;
+  border: 2px solid #FF7F00;
+}
+
+#textarea{
+  width: 80%;
+  height: 250px;
+  background-color: black;
+  color: white;
+  border: 2px solid #FF7F00;
+  resize: none;
+}
+
+#fbut{
+  color:white;
+  background-color: black;
+  border: 2px solid #FF7F00;
+}
+
+.move{
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  padding-right:15px;
+  padding-bottom:15px; 
+}

@@ -1,119 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skorix</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script type="text/javascript">
-      window.onload = function () {
-        setInterval(function () {
-          // Seconds
-          var seconds = new Date().getSeconds();
-          document.getElementById("seconds").innerHTML =
-            (seconds < 10 ? "0" : "") + seconds;
+<Doctpe HTML>
+ <html>
+<head>
+<meta charset="utf-8">   
 
-          // Minutes
-          var minutes = new Date().getMinutes();
-          document.getElementById("minutes").innerHTML =
-            (minutes < 10 ? "0" : "") + minutes;
+<title>Главная</title>
+<link rel="stylesheet" href="Css/Style.css">
+<script type="text/javascript" src="java/clock.js"></script>
+</head>
 
-          // Hours
-          var hours = new Date().getHours();
-          document.getElementById("hours").innerHTML =
-            (hours < 10 ? "0" : "") + hours;
-        }, 1000);
-      };
-    </script>
-  </head>
-  <body class="body">
-    <div align="center" class="index">
-      <p>
-        <img src="Skorix Avatar round.png" width="200" height="200" />
-      </p>
-      <h1 style="color: #ffffff">Skorix</h1>
-      <p>
-        <a href="Steam.html" class="floating-button">Steam</a>
-      </p>
-      <p>
-        <a href="Discord.html" class="floating-button">Discord</a>
-      </p>
-      <p>
-        <a href="Telegram.html" class="floating-button">Telegram</a>
-      </p>
-      <p>
-        <a href="Epic Games.html" class="floating-button">Epic Games</a>
-      </p>
+<body>
+     
+<header>
+	<div id ="Logo1">
+		<center>DarKNighT</center>	
+	<div>
+        
+    <div id ="wg1">
+            <a target="_blank" href="https://vk.com/danilrogach">
+             <img id="wg" src="https://i.imgur.com/F4Adqpq.png"></a>
+  
+  
+            <a target="_blank" href="https://discord.gg/m34rWY9zPX">
+             <img id="wg" src="https://i.imgur.com/0YXlnkT.png"></a></p>
     </div>
+
     <div class="clock">
       <ul>
-        <li id="hours">00</li>
-        <li id="separator">:</li>
-        <li id="minutes">00</li>
-        <li id="separator">:</li>
-        <li id="seconds">00</li>
-      </ul>
+         <li id="hours">00</li>
+         <li id="separator">:</li>
+         <li id="minutes">00</li>
+         <li id="separator">:</li>
+         <li id="seconds">00</li>
+     </ul>
     </div>
-    <div id="cont1">
-      <center>
-        <form
-          name="test"
-          method="post"
-          ectype="text/plai"
-          action="mailto:ваша_почта"
-        >
-          <p style="color: #ffffff">
-            <b>Ваша почта:</b><br />
-            <input type="text" size="40" />
-          </p>
+	        
+</header>
+	
+<ul class="menu-2">
+   <a href="Index.html"><li>Главная</li></a>
+   <a href="Music.html"><li>Музыка</li></a>
+   <a href="Concert.html"><li>Видео</li></a>
+   <a href="Credit.html"><li>Контакты</li></a>
+</ul>
 
-          <p style="color: #ffffff">
-            Комментарий<br />
-            <textarea name="comment" cols="40" rows="3"></textarea>
-          </p>
-          <p>
-            <input type="submit" name="submit" value="Отправить" />
-            <input type="reset" value="Очистить" />
-          </p>
-        </form>
-        <div class="metrik">
-          <!--LiveInternet counter--><a
-            href="https://www.liveinternet.ru/click"
-            target="_blank"
-            ><img
-              id="licnt9C6A"
-              width="88"
-              height="120"
-              style="border: 0"
-              title="LiveInternet: показано количество просмотров и посетителей"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
-              alt=""
-          /></a>
-          <script>
-            (function (d, s) {
-              d.getElementById("licnt9C6A").src =
-                "https://counter.yadro.ru/hit?t28.9;r" +
-                escape(d.referrer) +
-                (typeof s == "undefined"
-                  ? ""
-                  : ";s" +
-                    s.width +
-                    "*" +
-                    s.height +
-                    "*" +
-                    (s.colorDepth ? s.colorDepth : s.pixelDepth)) +
-                ";u" +
-                escape(d.URL) +
-                ";h" +
-                escape(d.title.substring(0, 150)) +
-                ";" +
-                Math.random();
-            })(document, screen);
-          </script>
-          <!--/LiveInternet-->
-        </div>
-      </center>
-    </div>
-  </body>
-</html>
+<div id = "cont">
+      <a href="TLDoBI.html"><img id="photo_L" src="images/a1.png"></a>
+     <div id = "name">Новое DEMO-EP </div>
+     <div id = "text">Группа: The Last Day of Brave Idiocy<br>
+                      Трек: Hurricane<br>
+                      <br>
+                      Новое демо группы, играющей в стиле Atmospheric Black Metal<br>
+     </div>
+</div>
+
+<div id = "cont">
+      <a href="PostPunk.html"><img id="photo_L" src="images/a2.png"></a>
+     <div id = "name">Обновление </div>
+     <div id = "text">Альбом Atmospheric Sad Music, был обновлен<br>
+                      
+                     
+                 
+     </div>
+</div>
+
+
+  
+<footer>
+	<div id ="Logo1">
+		<center>DarKNighT</center>	
+	</div>
+</footer>
+</body>
+ </html>
