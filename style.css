@@ -63,7 +63,8 @@ header {
   .logo{
     font-size: 8rem;
     margin: 0;
-    left:31%;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
   }
 
