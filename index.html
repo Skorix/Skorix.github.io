@@ -10,6 +10,8 @@
         text-align: center;
         margin: 0;
         padding: 0;
+        background-color: #222;
+        color: #fff;
       }
       h1 {
         margin-top: 50px;
@@ -22,14 +24,25 @@
         font-size: 20px;
         padding: 10px;
         margin-top: 50px;
-        background-color: #4caf50;
-        color: white;
+        background-color: #0f0;
+        color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;
       }
       button:hover {
-        background-color: #3e8e41;
+        background-color: #0c0;
+      }
+      @media only screen and (max-width: 600px) {
+        button {
+          font-size: 16px;
+          padding: 8px;
+          margin-top: 30px;
+        }
+        #timer {
+          font-size: 30px;
+          margin-top: 30px;
+        }
       }
     </style>
   </head>
@@ -88,5 +101,31 @@
 
     startStopButton.addEventListener("click", startStop);
     resetButton.addEventListener("click", reset);
+
+    // WebSocket communication
+    let ws = new WebSocket("wss://your-websocket-server.com");
+
+    ws.onopen = function () {
+      console.log("WebSocket connection established.");
+    };
+
+    ws.onmessage = function (event) {
+      let message = event.data;
+      if (message === "start") {
+        startStop();
+      } else if (message === "stop") {
+        startStop();
+      } else if (message === "reset") {
+        reset();
+      }
+    };
+
+    window.addEventListener("beforeunload", function () {
+      ws.close();
+    });
+
+    window.addEventListener("unload", function () {
+      ws.close();
+    });
   </script>
 </html>
