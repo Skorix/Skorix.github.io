@@ -4,7 +4,7 @@
     <title>Button Click Time Recorder</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
-          .container {
+        .container {
         text-align: center;
         margin-top: 100px;
       }
@@ -14,9 +14,10 @@
         font-size: 18px;
       }
 
-      #recorded-time {
+      #recorded-times {
         margin-top: 20px;
         font-size: 24px;
+        list-style: none;
       }
     </style>
   </head>
@@ -24,10 +25,8 @@
     <div class="container">
       <h1>Button Click Time Recorder</h1>
       <button id="record-btn">Click me!</button>
-      <p id="recorded-time"></p>
+      <ul id="recorded-times"></ul>
     </div>
-
-    <script src="script.js"></script>
   </body>
   <script>
     // Function to get the current time
@@ -38,8 +37,10 @@
 
     // Function to handle button click event
     function handleButtonClick() {
-      const recordedTime = document.getElementById("recorded-time");
-      recordedTime.textContent = `Clicked at ${getCurrentTime()} 🕒`;
+      const recordedTimesList = document.getElementById("recorded-times");
+      const newRecord = document.createElement("li");
+      newRecord.textContent = `Clicked at ${getCurrentTime()} 🕒`;
+      recordedTimesList.appendChild(newRecord);
     }
 
     // Event listener for button click
