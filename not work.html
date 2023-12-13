@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      #stopwatch {
+        background-color: #000;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      button {
+        background-color: #00ff00;
+        border: none;
+        border-radius: 10px;
+        color: #000;
+        cursor: pointer;
+        font-size: 1em;
+        margin: 10px;
+        padding: 10px;
+        text-transform: uppercase;
+      }
+
+      button:hover {
+        background-color: #00cc00;
+      }
+
+      @media (max-width: 768px) {
+        #stopwatch {
+          font-size: 1.5em;
+          margin: 10px;
+          padding: 10px;
+        }
+
+        button {
+          font-size: 0.8em;
+          margin: 5px;
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stopwatch">00:00:00</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+    <script src="js/script.js"></script>
+  </body>
+  <script>
+    const stopwatch = document.getElementById("stopwatch");
+    const startButton = document.getElementById("start");
+    const stopButton = document.getElementById("stop");
+    const resetButton = document.getElementById("reset");
+
+    let startTime;
+    let elapsedTime = 0;
+    let timerInterval;
+
+    function startTimer() {
+      startTime = new Date();
+      timerInterval = setInterval(updateTimer, 10);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      elapsedTime = 0;
+      updateTimer();
+    }
+
+    function updateTimer() {
+      const currentTime = new Date();
+      const timeElapsed =
+        currentTime.getTime() - startTime.getTime() + elapsedTime;
+      const minutes = Math.floor(timeElapsed / 60000);
+      const seconds = Math.floor((timeElapsed % 60000) / 1000);
+      const milliseconds = Math.floor((timeElapsed % 1000) / 10);
+      stopwatch.textContent = `${padNumber(minutes)}:${padNumber(
+        seconds
+      )}:${padNumber(milliseconds)}`;
+    }
+
+    function padNumber(number) {
+      return number.toString().padStart(2, "0");
+    }
+
+    startButton.addEventListener("click", startTimer);
+    stopButton.addEventListener("click", stopTimer);
+    resetButton.addEventListener("click", resetTimer);
+  </script>
+</html>

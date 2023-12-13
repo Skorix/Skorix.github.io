@@ -1,107 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Stopwatch</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Button Click Time Recorder</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
-      body {
-        background-color: #1a1a1a;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        font-size: 2em;
+          .container {
         text-align: center;
-      }
-
-      #stopwatch {
-        background-color: #000;
-        border-radius: 10px;
-        display: inline-block;
-        margin: 20px;
-        padding: 20px;
+        margin-top: 100px;
       }
 
       button {
-        background-color: #00ff00;
-        border: none;
-        border-radius: 10px;
-        color: #000;
-        cursor: pointer;
-        font-size: 1em;
-        margin: 10px;
-        padding: 10px;
-        text-transform: uppercase;
+        padding: 10px 20px;
+        font-size: 18px;
       }
 
-      button:hover {
-        background-color: #00cc00;
-      }
-
-      @media (max-width: 768px) {
-        #stopwatch {
-          font-size: 1.5em;
-          margin: 10px;
-          padding: 10px;
-        }
-
-        button {
-          font-size: 0.8em;
-          margin: 5px;
-          padding: 5px;
-        }
+      #recorded-time {
+        margin-top: 20px;
+        font-size: 24px;
       }
     </style>
   </head>
   <body>
-    <div id="stopwatch">00:00:00</div>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    <button id="reset">Reset</button>
-    <script src="js/script.js"></script>
+    <div class="container">
+      <h1>Button Click Time Recorder</h1>
+      <button id="record-btn">Click me!</button>
+      <p id="recorded-time"></p>
+    </div>
+
+    <script src="script.js"></script>
   </body>
   <script>
-    const stopwatch = document.getElementById("stopwatch");
-    const startButton = document.getElementById("start");
-    const stopButton = document.getElementById("stop");
-    const resetButton = document.getElementById("reset");
-
-    let startTime;
-    let elapsedTime = 0;
-    let timerInterval;
-
-    function startTimer() {
-      startTime = new Date();
-      timerInterval = setInterval(updateTimer, 10);
+    // Function to get the current time
+    function getCurrentTime() {
+      const now = new Date();
+      return now.toLocaleTimeString();
     }
 
-    function stopTimer() {
-      clearInterval(timerInterval);
+    // Function to handle button click event
+    function handleButtonClick() {
+      const recordedTime = document.getElementById("recorded-time");
+      recordedTime.textContent = `Clicked at ${getCurrentTime()} 🕒`;
     }
 
-    function resetTimer() {
-      clearInterval(timerInterval);
-      elapsedTime = 0;
-      updateTimer();
-    }
-
-    function updateTimer() {
-      const currentTime = new Date();
-      const timeElapsed =
-        currentTime.getTime() - startTime.getTime() + elapsedTime;
-      const minutes = Math.floor(timeElapsed / 60000);
-      const seconds = Math.floor((timeElapsed % 60000) / 1000);
-      const milliseconds = Math.floor((timeElapsed % 1000) / 10);
-      stopwatch.textContent = `${padNumber(minutes)}:${padNumber(
-        seconds
-      )}:${padNumber(milliseconds)}`;
-    }
-
-    function padNumber(number) {
-      return number.toString().padStart(2, "0");
-    }
-
-    startButton.addEventListener("click", startTimer);
-    stopButton.addEventListener("click", stopTimer);
-    resetButton.addEventListener("click", resetTimer);
+    // Event listener for button click
+    document
+      .getElementById("record-btn")
+      .addEventListener("click", handleButtonClick);
   </script>
 </html>
