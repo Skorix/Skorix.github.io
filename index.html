@@ -3,89 +3,67 @@
   <head>
     <title>Button Click Time Recorder</title>
     <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
+      .container {
         text-align: center;
-        padding: 20px;
+        margin-top: 100px;
       }
 
       h1 {
-        margin-top: 0;
+        color: white;
       }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-
-      .record-btn {
-        padding: 20px 50px;
-        font-size: 24px;
-        background-color: black;
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #333;
         color: white;
         border: none;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      .neon-button {
+        background-color: #333;
         position: relative;
         overflow: hidden;
         transition: background-color 0.5s;
       }
 
-      .record-btn:before, .record-btn:after {
+      .neon-button:after {
         content: '';
         position: absolute;
-        background-color: #fff;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
+        top: -50px;
+        left: -50px;
+        width: calc(100% + 100px);
+        height: calc(100% + 100px);
+        background: radial-gradient(circle, #fff 20%, transparent 30%);
+        transform: scale(0);
+        opacity: 0;
         transition: transform 0.5s, opacity 0.5s;
       }
 
-      .record-btn:before {
-        top: -10px;
-        left: -10px;
-      }
-
-      .record-btn:after {
-        bottom: -10px;
-        right: -10px;
-      }
-
-      .record-btn.neon {
-        background-color: #333;
-      }
-
-      .record-btn.neon:before, .record-btn.neon:after {
-        transform: scale(0);
-        opacity: 0;
-      }
-
-      .record-btn.neon:active:before, .record-btn.neon:active:after {
+      .neon-button:active:after {
         transform: scale(1);
         opacity: 1;
       }
 
       #recorded-times {
         margin-top: 20px;
-        font-size: 18px;
+        font-size: 24px;
         list-style: none;
-        text-align: left;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 0;
+        color: white;
       }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="container">
-      <h1>Button Click Timee Recorder</h1>
-      <button id="record-btn" class="">Click me!</button>
+      <h1>Button Click Time Recorder</h1>
+      <button id="record-btn" class="neon-button">Click me!</button>
       <ul id="recorded-times"></ul>
     </div>
 
@@ -105,13 +83,9 @@
       }
 
       // Event listener for button click
-      const btn = document.getElementById("record-btn");
-      btn.addEventListener("click", handleButtonClick);
-
-      // Toggle neon class on button click
-      btn.addEventListener("click", function () {
-        this.classList.toggle("neon");
-      });
+      document
+        .getElementById("record-btn")
+        .addEventListener("click", handleButtonClick);
     </script>
   </body>
 </html>
