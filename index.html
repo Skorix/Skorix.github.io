@@ -1,91 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Button Click Time Recorder</title>
-    <style>
-      .container {
-        text-align: center;
-        margin-top: 100px;
+<head>
+  <title>Button Click Time Recorder</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .btn-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s;
+    }
+    
+    .record-btn {
+      font-size: 24px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      padding: 10px 20px;
+      transition: background-color 0.5s;
+    }
+    
+    .record-btn.neon {
+      background-color: #1a1aff;
+    }
+    
+    #recorded-times {
+      margin-top: 20px;
+      font-size: 18px;
+      list-style: none;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <h1>Button Click Time Recorder</h1>
+    <ul id="recorded-times"></ul>
+  </div>
+  
+  <div class="btn-container">
+    <button id="record-btn" class="record-btn">Record Time</button>
+  </div>
+  
+  <script>
+    // Function to get the current time
+    function getCurrentTime() {
+      const now = new Date();
+      return now.toLocaleTimeString();
+    }
+    
+    // Function to handle button click event
+    function handleButtonClick(event) {
+      const recordedTimesList = document.getElementById('recorded-times');
+      const newRecord = document.createElement('li');
+      newRecord.textContent = `Clicked at ${getCurrentTime()} 🕒`;
+      recordedTimesList.appendChild(newRecord);
+    }
+    
+    // Event listener for button click
+    const btn = document.getElementById('record-btn');
+    btn.addEventListener('click', handleButtonClick);
+    
+    // Toggle neon class on button click
+    btn.addEventListener('click', function() {
+      this.classList.toggle('neon');
+    });
+    
+    // Scroll to the bottom of the screen
+    window.addEventListener('click', function(event) {
+      if (
+        event.target === document.documentElement ||
+        event.target === document.body
+      ) {
+        window.scrollTo(0, document.body.scrollHeight);
       }
-
-      h1 {
-        color: white;
-      }
-
-      button {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #333;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      }
-
-      button:focus {
-        outline: none;
-      }
-
-      .neon-button {
-        background-color: #333;
-        position: relative;
-        overflow: hidden;
-        transition: background-color 0.5s;
-      }
-
-      .neon-button:after {
-        content: '';
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        width: calc(100% + 100px);
-        height: calc(100% + 100px);
-        background: radial-gradient(circle, #fff 20%, transparent 30%);
-        transform: scale(0);
-        opacity: 0;
-        transition: transform 0.5s, opacity 0.5s;
-      }
-
-      .neon-button:active:after {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      #recorded-times {
-        margin-top: 20px;
-        font-size: 24px;
-        list-style: none;
-        color: white;
-      }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Button Click Time Recorder</h1>
-      <button id="record-btn" class="neon-button">Click me!</button>
-      <ul id="recorded-times"></ul>
-    </div>
-
-    <script>
-      // Function to get the current time
-      function getCurrentTime() {
-        const now = new Date();
-        return now.toLocaleTimeString();
-      }
-
-      // Function to handle button click event
-      function handleButtonClick(event) {
-        const recordedTimesList = document.getElementById("recorded-times");
-        const newRecord = document.createElement("li");
-        newRecord.textContent = `Clicked at ${getCurrentTime()} 🕒`;
-        recordedTimesList.appendChild(newRecord);
-      }
-
-      // Event listener for button click
-      document
-        .getElementById("record-btn")
-        .addEventListener("click", handleButtonClick);
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
